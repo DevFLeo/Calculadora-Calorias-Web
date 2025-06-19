@@ -1,0 +1,167 @@
+/* Utilização de Custom Properties (Variáveis CSS) para centralizar os tokens de design.
+  Isso estabelece uma "única fonte da verdade" (Single Source of Truth) para o tema,
+  facilitando a manutenção e a implementação de temas alternativos (ex: dark mode) no futuro.
+*/
+
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --background-color: #f4f7f9;
+  --surface-color: #ffffff;
+  --text-primary-color: #333333;
+  --text-secondary-color: #555555;
+  --border-color: #dee2e6;
+  --feedback-success-bg: #e9f7ef;
+  --feedback-success-border: #28a745;
+  --feedback-error-color: #dc3545;
+
+  --border-radius-md: 8px;
+  --shadow-standard: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+/*
+  Aplica um box model mais intuitivo a todos os elementos. 'border-box' garante
+  que o padding e a borda sejam incluídos na largura/altura total do elemento,
+  evitando cálculos inesperados de layout.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+  margin: 0;
+
+  /* Uso de Flexbox para centralizar o componente principal na viewport.
+     Esta abordagem é robusta e garante o alinhamento vertical e horizontal
+     independentemente das dimensões da tela. */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem; /* Usa-se 'rem' para um padding responsivo à fonte do usuário */
+}
+
+/* Estilização do container principal da calculadora.*/
+
+.calculator-container {
+  background-color: var(--surface-color);
+  padding: 2.5rem; /* Rem para espaçamento escalável */
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-standard);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.calculator-container > p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-secondary-color);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-family: inherit; /* Herda a fonte do body */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Melhora a acessibilidade e a experiência do usuário ao fornecer
+  um feedback visual claro quando um campo está em foco.
+*/
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/*
+  Container de resultados estilizado para se diferenciar da área de input,
+  fornecendo um feedback claro ao usuário após a submissão do formulário.
+*/
+#resultado-container {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-left: 5px solid var(--feedback-success-border);
+  background-color: var(--feedback-success-bg);
+  border-radius: var(--border-radius-md);
+}
+
+#resultado-container h2,
+#resultado-container h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+#resultado-container hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 1rem 0;
+}
+
+#resultado-container ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+/*
+  Classe de utilitário para mensagens de erro, desacoplada da estrutura.
+  Pode ser reutilizada em diferentes contextos.
+*/
+
+.error {
+  color: var(--feedback-error-color);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .calculator-container {
+    padding: 1.5rem;
+  }
+}
