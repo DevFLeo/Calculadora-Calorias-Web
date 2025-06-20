@@ -49,7 +49,7 @@ Para rodar este projeto no seu computador, siga os passos abaixo:
 
 ```bash
 # 1. Clone o repositório para sua máquina local
-git clone [https://github.com/](https://github.com/)DevFLeo/calculadora-calorias-web.git
+git clone https://github.com/DevFLeo/calculadora-calorias-web.git
 
 # 2. Navegue até a pasta do projeto
 cd calculadora-calorias-web
