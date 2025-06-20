@@ -1,16 +1,13 @@
 # ✨ Calculadora de Calorias Web
 
 [![Licença: MIT](https://img.shields.io/badge/Licença-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-blueviolet)](https://[SEU-USUARIO].github.io/calculadora-calorias-web/)
-
-![Demonstração da Calculadora de Calorias](https://[LINK_PARA_SUA_IMAGEM_OU_GIF_AQUI])
-*Uma demonstração da interface da calculadora em ação.*
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-blueviolet)](https:/DevFLeo/.github.io/calculadora-calorias-web/)
 
 Este projeto é uma aplicação web interativa desenvolvida para estimar as necessidades calóricas diárias de um indivíduo. Utilizando a fórmula de Harris-Benedict (revisada), a ferramenta calcula a Taxa Metabólica Basal (TMB) e o gasto calórico diário com base em dados fornecidos pelo usuário, como sexo, idade, peso, altura e nível de atividade física.
 
 ## 🔗 Demo Ao Vivo
 
-**Você pode testar a aplicação aqui:** [https://[SEU-USUARIO].github.io/calculadora-calorias-web/](https://[SEU-USUARIO].github.io/calculadora-calorias-web/)
+**Você pode testar a aplicação aqui:** [https://DevFLeo.github.io/calculadora-calorias-web/](https://DevFLeo.github.io/calculadora-calorias-web/)
 
 ## 🚀 Funcionalidades
 
